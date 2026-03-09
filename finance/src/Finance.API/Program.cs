@@ -9,7 +9,12 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
+const short port = 5102;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.WebHost.ConfigureKestrel(serverOptions => serverOptions.ListenAnyIP(port));
+
 var services = builder.Services;
 
 services.AddAuthentication(options =>

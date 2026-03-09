@@ -1,13 +1,15 @@
-﻿using Finance.Application.DTO;
+using Finance.Application.DTO;
 using Finance.Application.Interfaces;
 using MediatR;
 
-namespace Finance.Application.Todos.Queries.GetUserCurrencies;
+namespace Finance.Application.Todos.Queries;
 
-public class GetUserCurrenciesHandler(IFavoriteRepository _favoriteRepository)
-    : IRequestHandler<GetUserCurrenciesQuery, List<CurrencyDto>>
+public record GetFavoriteCurrenciesQuery(Guid UserId) : IRequest<List<CurrencyDto>>;
+
+public class GetFavoriteCurrenciesHandler(IFavoriteRepository _favoriteRepository)
+    : IRequestHandler<GetFavoriteCurrenciesQuery, List<CurrencyDto>>
 {
-    public async Task<List<CurrencyDto>> Handle(GetUserCurrenciesQuery request, CancellationToken ct)
+    public async Task<List<CurrencyDto>> Handle(GetFavoriteCurrenciesQuery request, CancellationToken ct)
     {
         var currencies = await _favoriteRepository.GetUserFavoriteCurrencies(request.UserId);
 

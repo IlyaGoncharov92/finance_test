@@ -1,4 +1,5 @@
-﻿using Finance.Application.Todos.Commands.AddFavoriteCurrency;
+﻿using System.Security.Claims;
+using Finance.Application.Todos.Commands;
 using MediatR;
 
 namespace Finance.API.Endpoints;
@@ -7,21 +8,24 @@ internal sealed class AddFavoriteCurrencyEndpoint : IEndpoint
 {
     public sealed class Request
     {
-        public Guid UserId { get; set; }
         public Guid[] CurrencyIds { get; set; } = [];
     }
 
     public void MapEndpoint(IEndpointRouteBuilder app)
     {
-        app.MapPost("api/finance/favorites", async (
+        app.MapPost("favorites", async (
             Request request,
+            ClaimsPrincipal user,
             IMediator mediator) =>
         {
-            var command = new AddFavoriteCurrencyCommand(request.UserId, request.CurrencyIds);
-            
+            var userId = user.GetUserId();
+
+            var command = new AddFavoriteCurrenciesCommand(userId, request.CurrencyIds);
+
             await mediator.Send(command);
 
-            return Results.Ok;
+            return Results.Ok();
         });
+        // .RequireAuthorization();
     }
 }

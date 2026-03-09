@@ -3,7 +3,7 @@ using System.Text;
 using System.Xml.Serialization;
 using Finance.Application.DTO;
 using Finance.Application.Interfaces;
-using Finance.Application.Todos.Commands.UpdateCurrencies;
+using Finance.Application.Todos.Commands;
 using Finance.Infrastructure.Models;
 using MediatR;
 

@@ -1,4 +1,9 @@
+
+const short port = 5100;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.WebHost.ConfigureKestrel(serverOptions => serverOptions.ListenAnyIP(port));
 
 builder.Services.AddOpenApi();
 
