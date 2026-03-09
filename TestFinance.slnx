@@ -1,0 +1,23 @@
+<Solution>
+  <Folder Name="/auth/" />
+  <Folder Name="/auth/src/">
+    <Project Path="auth/src/Auth.API/Auth.API.csproj" />
+    <Project Path="auth/src/Auth.Application/Auth.Application.csproj" />
+    <Project Path="auth/src/Auth.Domain/Auth.Domain.csproj" />
+    <Project Path="auth/src/Auth.Infrastructure/Auth.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/auth/tests/" />
+  <Folder Name="/finance/" />
+  <Folder Name="/finance/src/">
+    <Project Path="finance/src/Finance.API/Finance.API.csproj" />
+    <Project Path="finance/src/Finance.Application/Finance.Application.csproj" />
+    <Project Path="finance/src/Finance.Domain/Finance.Domain.csproj" />
+    <Project Path="finance/src/Finance.Infrastructure/Finance.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/finance/tests/">
+    <Project Path="finance/tests/Tests/Tests.csproj" />
+  </Folder>
+  <Folder Name="/gateway/">
+    <Project Path="gateway/Gateway.API/Gateway.API.csproj" />
+  </Folder>
+</Solution>
