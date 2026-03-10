@@ -1,7 +1,7 @@
 ﻿using Finance.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 
-namespace Tests.Db;
+namespace Tests;
 
 [Collection("postgres")]
 public abstract class RepositoryTestBase : IAsyncLifetime

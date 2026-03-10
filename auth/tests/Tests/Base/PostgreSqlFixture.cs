@@ -1,6 +1,6 @@
 ﻿using Testcontainers.PostgreSql;
 
-namespace Tests.Db;
+namespace Tests;
 
 [CollectionDefinition(Name, DisableParallelization = true)]
 public class PostgresCollection : ICollectionFixture<PostgreSqlFixture>
@@ -18,7 +18,7 @@ public sealed class PostgreSqlFixture : IAsyncLifetime
     {
         _container = new PostgreSqlBuilder()
             .WithImage("postgres:16")
-            .WithDatabase("finance_test")
+            .WithDatabase("finance_auth_test")
             .WithUsername("postgres")
             .WithPassword("postgres")
             .Build();

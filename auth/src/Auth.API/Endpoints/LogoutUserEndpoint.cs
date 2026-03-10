@@ -7,7 +7,8 @@ internal sealed class LogoutUserEndpoint : IEndpoint
         app.MapPost("logout", () =>
         {
             // TODO: Сейчас нет refreshToken, поэтому логаута только на клиенте (удаление токена)
-            return Results.NoContent();
-        });
+            return Results.Ok(true);
+        })
+        .RequireAuthorization();
     }
 }

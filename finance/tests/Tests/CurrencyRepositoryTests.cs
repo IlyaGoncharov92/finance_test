@@ -3,7 +3,7 @@ using Finance.Domain.Entities;
 using Finance.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 
-namespace Tests.Db;
+namespace Tests;
 
 [Collection(PostgresCollection.Name)]
 public class CurrencyRepositoryTests(PostgreSqlFixture fixture) : RepositoryTestBase(fixture)

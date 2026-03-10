@@ -18,6 +18,7 @@
 
 **POST** `/api/auth/register`
 
+#### Request body:
 ```json
 {
   "email": "user@example.com",
@@ -30,6 +31,7 @@
 
 **POST** `/api/auth/login`
 
+#### Request body:
 ```json
 {
   "email": "user@example.com",
@@ -41,6 +43,7 @@
 
 **POST** `/api/finance/favorites`
 
+#### Request body:
 ```json
 {
   "CurrencyIds": [

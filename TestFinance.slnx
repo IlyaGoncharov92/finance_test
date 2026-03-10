@@ -6,7 +6,9 @@
     <Project Path="auth/src/Auth.Domain/Auth.Domain.csproj" />
     <Project Path="auth/src/Auth.Infrastructure/Auth.Infrastructure.csproj" />
   </Folder>
-  <Folder Name="/auth/tests/" />
+  <Folder Name="/auth/tests/">
+    <Project Path="auth/tests/Tests/Tests.csproj" />
+  </Folder>
   <Folder Name="/finance/" />
   <Folder Name="/finance/src/">
     <Project Path="finance/src/Finance.API/Finance.API.csproj" />

@@ -2,7 +2,7 @@
 using Finance.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 
-namespace Tests.Db;
+namespace Tests;
 
 [Collection(PostgresCollection.Name)]
 public class FavoriteRepositoryTests(PostgreSqlFixture fixture) : RepositoryTestBase(fixture)
